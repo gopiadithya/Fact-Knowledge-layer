@@ -1,0 +1,1420 @@
+{
+  "families": [
+    {
+      "family_id": "annex_ii",
+      "family_label": "Annex II",
+      "members": [
+        {
+          "raw": "Annex II",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "bop_surplus",
+      "family_label": "BoP surplus",
+      "members": [
+        {
+          "raw": "BoP surplus",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "current_account_deficit",
+      "family_label": "Current account deficit",
+      "members": [
+        {
+          "raw": "CA deficit",
+          "confidence": 1.0
+        },
+        {
+          "raw": "Current account deficit (% of GDP)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "cd_issuances",
+      "family_label": "Certificate of Deposit issuances",
+      "members": [
+        {
+          "raw": "CD issuances",
+          "confidence": 1.0
+        },
+        {
+          "raw": "fresh issuance of CDs",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "capital_expenditure",
+      "family_label": "Capital expenditure",
+      "members": [
+        {
+          "raw": "Capital expenditure registered",
+          "confidence": 1.0
+        },
+        {
+          "raw": "capital expenditure5 registered a growth",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "exchange_rates",
+      "family_label": "Exchange rates and bilateral movements",
+      "members": [
+        {
+          "raw": "Chart III.20: Changes in the bilateral exchange rates of the major countries",
+          "confidence": 0.9
+        },
+        {
+          "raw": "INR closed",
+          "confidence": 1.0
+        },
+        {
+          "raw": "INR closed almost flat",
+          "confidence": 1.0
+        },
+        {
+          "raw": "INR closed the quarter",
+          "confidence": 1.0
+        },
+        {
+          "raw": "REER",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "credit_risk_and_exposure",
+      "family_label": "Credit risk and exposure measures",
+      "members": [
+        {
+          "raw": "Concentration risks moderated for PSBs to within Basel III large exposure limit (25 percent of CET1) but rose for foreign banks.",
+          "confidence": 0.8
+        },
+        {
+          "raw": "India: SCB Exposure to the Power Sector (In percent of Total Outstanding Credit)",
+          "confidence": 0.9
+        },
+        {
+          "raw": "India: SCBs' Credit to NBFCs",
+          "confidence": 0.9
+        },
+        {
+          "raw": "PVBs are the most active in unsecured retails loans and have incurred the highest credit risks from the segment recently.",
+          "confidence": 0.8
+        },
+        {
+          "raw": "Sectoral Credit Risks: Housing Loans and other Retail Loans (2022/2023)",
+          "confidence": 0.9
+        },
+        {
+          "raw": "Top 1: Large Credit Exposure by Type of Banks (In percent of Common Equity Tier1)",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "consolidated_debt",
+      "family_label": "Consolidated debt",
+      "members": [
+        {
+          "raw": "Consolidated debt",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "inflation",
+      "family_label": "Inflation rates and indicators",
+      "members": [
+        {
+          "raw": "Core inflation",
+          "confidence": 1.0
+        },
+        {
+          "raw": "Global inflation peaked",
+          "confidence": 0.9
+        },
+        {
+          "raw": "Headline CPI inflation",
+          "confidence": 1.0
+        },
+        {
+          "raw": "defilator inflation",
+          "confidence": 0.9
+        },
+        {
+          "raw": "fuel inflation",
+          "confidence": 1.0
+        },
+        {
+          "raw": "inflation",
+          "confidence": 1.0
+        },
+        {
+          "raw": "inflation in tomato prices",
+          "confidence": 1.0
+        },
+        {
+          "raw": "inflation rate",
+          "confidence": 1.0
+        },
+        {
+          "raw": "the overall inflation",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "corporate_bond_ratings",
+      "family_label": "Corporate bond ratings distribution",
+      "members": [
+        {
+          "raw": "Corporate Bond Ratings Distribution in Selective Asian Countries",
+          "confidence": 1.0
+        },
+        {
+          "raw": "Corporate bond issuances in India are largely concentrated in higher rating categories compared to most Asian countries except China.",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "credit_to_nonfinancial_corporations",
+      "family_label": "Credit to Nonfinancial Corporations",
+      "members": [
+        {
+          "raw": "Credit to Nonfinancial Corporations (In percent of GDP)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "economic_review_and_outlook",
+      "family_label": "Economic review and outlook descriptions",
+      "members": [
+        {
+          "raw": "ECONOMIC REVIEW remained low",
+          "confidence": 0.7
+        },
+        {
+          "raw": "MEDIUM TERM OUTLOOK",
+          "confidence": 0.9
+        },
+        {
+          "raw": "MONETARY AND FINANCIAL SECTOR DEVELOPMENTS",
+          "confidence": 0.9
+        },
+        {
+          "raw": "PRICES AND INFLATION",
+          "confidence": 0.9
+        },
+        {
+          "raw": "PROSPECTS inflows",
+          "confidence": 0.7
+        },
+        {
+          "raw": "STATE OF THE ECONOMY",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "portfolio_flows",
+      "family_label": "Portfolio and FPI flows",
+      "members": [
+        {
+          "raw": "FPIs made net sales",
+          "confidence": 1.0
+        },
+        {
+          "raw": "net portfolio inflows",
+          "confidence": 1.0
+        },
+        {
+          "raw": "segment witnessed net FPI outflow",
+          "confidence": 1.0
+        },
+        {
+          "raw": "segment witnessed steady FPI inflows",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "fiscal_deficit",
+      "family_label": "Fiscal deficit measures",
+      "members": [
+        {
+          "raw": "Fiscal deficit (% of GDP)",
+          "confidence": 1.0
+        },
+        {
+          "raw": "GFD",
+          "confidence": 1.0
+        },
+        {
+          "raw": "budgeted a GFD",
+          "confidence": 0.9
+        },
+        {
+          "raw": "consolidated GFD budgeted",
+          "confidence": 0.9
+        },
+        {
+          "raw": "fiscal deficits below the limit",
+          "confidence": 0.8
+        },
+        {
+          "raw": "is budgeted",
+          "confidence": 0.7
+        },
+        {
+          "raw": "s deficit target",
+          "confidence": 0.7
+        },
+        {
+          "raw": "targeting a GFD",
+          "confidence": 0.9
+        },
+        {
+          "raw": "targeting the GFD",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "foreign_exchange_reserves",
+      "family_label": "Foreign exchange reserves",
+      "members": [
+        {
+          "raw": "Foreign exchange reserves",
+          "confidence": 1.0
+        },
+        {
+          "raw": "Foreign exchange reserves change",
+          "confidence": 1.0
+        },
+        {
+          "raw": "Gross foreign assets",
+          "confidence": 0.9
+        },
+        {
+          "raw": "ratio to foreign exchange reserves",
+          "confidence": 0.9
+        },
+        {
+          "raw": "reserves",
+          "confidence": 1.0
+        },
+        {
+          "raw": "reserves to the tune",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "g_sec_yield",
+      "family_label": "Government security yield",
+      "members": [
+        {
+          "raw": "G-sec yield closed the quarter",
+          "confidence": 1.0
+        },
+        {
+          "raw": "generic G-sec yield closed",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "regional_aggregates",
+      "family_label": "Regional or country group metrics",
+      "members": [
+        {
+          "raw": "G20 emerging market average",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "gdp_ratio_and_growth",
+      "family_label": "GDP ratios and growth rates",
+      "members": [
+        {
+          "raw": "GDP ratio remained modest",
+          "confidence": 1.0
+        },
+        {
+          "raw": "Nominal GDP growth",
+          "confidence": 1.0
+        },
+        {
+          "raw": "PFCE in real GDP",
+          "confidence": 0.9
+        },
+        {
+          "raw": "Q1 saw a strong growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "Q2 recording a growth rate",
+          "confidence": 0.8
+        },
+        {
+          "raw": "Real GDP growth",
+          "confidence": 1.0
+        },
+        {
+          "raw": "also saw a YoY increase",
+          "confidence": 0.8
+        },
+        {
+          "raw": "been a growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "below the growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "cent YoY after a growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "expenditure of the states grew",
+          "confidence": 0.8
+        },
+        {
+          "raw": "grew",
+          "confidence": 0.8
+        },
+        {
+          "raw": "grow",
+          "confidence": 0.8
+        },
+        {
+          "raw": "growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "healthy growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "posted a y-o-y growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "rebound to a growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "registering a YoY growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "resilient growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "substantial growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "volume growth",
+          "confidence": 0.8
+        },
+        {
+          "raw": "witnessing a YoY growth",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "general_government_debt",
+      "family_label": "General government debt",
+      "members": [
+        {
+          "raw": "General government debt",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "headcount",
+      "family_label": "Headcount",
+      "members": [
+        {
+          "raw": "Headcount",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "bank_credit_growth",
+      "family_label": "Bank credit growth and metrics",
+      "members": [
+        {
+          "raw": "India: Bank Credit Growth",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "indian_stock_markets",
+      "family_label": "Indian stock markets",
+      "members": [
+        {
+          "raw": "Indian stock markets",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "interest_payments",
+      "family_label": "Interest payments and expenses",
+      "members": [
+        {
+          "raw": "Interest payments remain elevated",
+          "confidence": 1.0
+        },
+        {
+          "raw": "interest incomes/ payments45",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "mutual_funds",
+      "family_label": "Mutual funds transactions and schemes",
+      "members": [
+        {
+          "raw": "Investors Mutual Funds fund schemes",
+          "confidence": 0.9
+        },
+        {
+          "raw": "Mutual funds made net purchases",
+          "confidence": 1.0
+        },
+        {
+          "raw": "mutual funds",
+          "confidence": 0.9
+        },
+        {
+          "raw": "oriented schemes witnessed net inflows",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "nagaland",
+      "family_label": "Nagaland state data",
+      "members": [
+        {
+          "raw": "Nagaland",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "net_fdi_flows",
+      "family_label": "Net FDI flows",
+      "members": [
+        {
+          "raw": "Net FDI flows",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "net_service_receipts",
+      "family_label": "Net service receipts",
+      "members": [
+        {
+          "raw": "Net service receipts",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "private_consumption_growth",
+      "family_label": "Private consumption growth",
+      "members": [
+        {
+          "raw": "Private consumption growth was buoyant",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "policy_repo_rate",
+      "family_label": "Policy repo rate",
+      "members": [
+        {
+          "raw": "Policy repo rate",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "sources_attribution",
+      "family_label": "Sources attribution text",
+      "members": [
+        {
+          "raw": "Sources: Haver Analytics; and IMF staff calculations.",
+          "confidence": 1.0
+        },
+        {
+          "raw": "Sources: Reserve Bank of India; and IMF staff estimates.",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "telangana",
+      "family_label": "Telangana state data",
+      "members": [
+        {
+          "raw": "Telangana",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "usd_inr_swaps",
+      "family_label": "USD/INR swaps",
+      "members": [
+        {
+          "raw": "USD/INR buy- sell swaps",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "execution_rate",
+      "family_label": "Aggregate execution rate",
+      "members": [
+        {
+          "raw": "aggregate execution rate",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "amounts",
+      "family_label": "Monetary amounts",
+      "members": [
+        {
+          "raw": "amounts",
+          "confidence": 0.6
+        },
+        {
+          "raw": "the total agreement amount",
+          "confidence": 0.8
+        },
+        {
+          "raw": "repatriation amount",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "neutral_rate",
+      "family_label": "Neutral rate distance or levels",
+      "members": [
+        {
+          "raw": "around the neutral rate",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "remittance_costs",
+      "family_label": "Remittance costs and receipts",
+      "members": [
+        {
+          "raw": "average cost of sending remittances",
+          "confidence": 1.0
+        },
+        {
+          "raw": "remittance receipts",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "deflation",
+      "family_label": "Deflation status",
+      "members": [
+        {
+          "raw": "before recording deflation",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "budgeted_status",
+      "family_label": "Budgeted status indicators",
+      "members": [
+        {
+          "raw": "budgeted",
+          "confidence": 0.8
+        },
+        {
+          "raw": "budgeted to reach its peak",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "family_id": "limits_and_thresholds",
+      "family_label": "Regulatory limits and thresholds",
+      "members": [
+        {
+          "raw": "consignment limit for e-commerce exports",
+          "confidence": 0.9
+        },
+        {
+          "raw": "courier export value limit",
+          "confidence": 0.9
+        },
+        {
+          "raw": "exceeding double the statutory limit (days)",
+          "confidence": 0.9
+        },
+        {
+          "raw": "extant limit",
+          "confidence": 0.9
+        },
+        {
+          "raw": "pricing slabs now cap charges",
+          "confidence": 0.7
+        },
+        {
+          "raw": "states an additional borrowing limit",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "net_flows_general",
+      "family_label": "General net capital or financial flows",
+      "members": [
+        {
+          "raw": "cumulative flows",
+          "confidence": 0.8
+        },
+        {
+          "raw": "net additions",
+          "confidence": 0.7
+        },
+        {
+          "raw": "net capital inflows",
+          "confidence": 1.0
+        },
+        {
+          "raw": "net inflows",
+          "confidence": 1.0
+        },
+        {
+          "raw": "net outflows",
+          "confidence": 1.0
+        },
+        {
+          "raw": "net sales to authorised dealers",
+          "confidence": 0.9
+        },
+        {
+          "raw": "registered a net inflow",
+          "confidence": 0.9
+        },
+        {
+          "raw": "resulting in a net outflow",
+          "confidence": 0.9
+        },
+        {
+          "raw": "resulted in a net inflow",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "currency_deposit_ratio",
+      "family_label": "Currency-deposit ratio",
+      "members": [
+        {
+          "raw": "currency-deposit ratio",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "domestic_lpg_price",
+      "family_label": "Domestic LPG price cut",
+      "members": [
+        {
+          "raw": "domestic LPG price cut",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "targets_and_ecosystems",
+      "family_label": "Ecosystem targets and goals",
+      "members": [
+        {
+          "raw": "ecosystem to achieve the target",
+          "confidence": 0.7
+        },
+        {
+          "raw": "sector to reach its goal",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "family_id": "effects",
+      "family_label": "Effects",
+      "members": [
+        {
+          "raw": "effects",
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "family_id": "elevated_status",
+      "family_label": "Elevated status indicators",
+      "members": [
+        {
+          "raw": "elevated",
+          "confidence": 0.6
+        }
+      ]
+    },
+    {
+      "family_id": "expenditure",
+      "family_label": "Government or sector expenditure",
+      "members": [
+        {
+          "raw": "expenditure to GDP ratio",
+          "confidence": 0.9
+        },
+        {
+          "raw": "grants-in-aid to states",
+          "confidence": 0.8
+        },
+        {
+          "raw": "outlay",
+          "confidence": 0.8
+        },
+        {
+          "raw": "per provisional accounts data (states)",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "family_id": "econometric_parameters",
+      "family_label": "Econometric variables and significance",
+      "members": [
+        {
+          "raw": "explanatory variables are exogenous",
+          "confidence": 0.8
+        },
+        {
+          "raw": "indicate significance levels",
+          "confidence": 0.8
+        },
+        {
+          "raw": "level models suggest an overvaluation",
+          "confidence": 0.8
+        },
+        {
+          "raw": "overidentifying restrictions are valid",
+          "confidence": 0.8
+        },
+        {
+          "raw": "represent significance levels",
+          "confidence": 0.8
+        },
+        {
+          "raw": "significance level",
+          "confidence": 0.8
+        },
+        {
+          "raw": "standard error",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "export_value",
+      "family_label": "Export value and growth",
+      "members": [
+        {
+          "raw": "export value",
+          "confidence": 1.0
+        },
+        {
+          "raw": "exports registered a modest growth",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "external_debt",
+      "family_label": "External debt",
+      "members": [
+        {
+          "raw": "external debt",
+          "confidence": 1.0
+        },
+        {
+          "raw": "s external debt",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "tariffs",
+      "family_label": "Tariffs and trade restrictions",
+      "members": [
+        {
+          "raw": "faces a high tariff rate",
+          "confidence": 0.9
+        },
+        {
+          "raw": "import duty hike",
+          "confidence": 0.9
+        },
+        {
+          "raw": "levied tariffs on manufactured goods",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "time_periods",
+      "family_label": "Time periods and durations",
+      "members": [
+        {
+          "raw": "first eight months",
+          "confidence": 0.8
+        },
+        {
+          "raw": "intra-year peak",
+          "confidence": 0.8
+        },
+        {
+          "raw": "quarter",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "economic_lows",
+      "family_label": "Economic multi-year lows",
+      "members": [
+        {
+          "raw": "five-year low",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "fixed_price",
+      "family_label": "Fixed price",
+      "members": [
+        {
+          "raw": "fixed price",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "footwear",
+      "family_label": "Footwear",
+      "members": [
+        {
+          "raw": "footwear",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "commercial_paper_issuances",
+      "family_label": "Commercial Paper issuances",
+      "members": [
+        {
+          "raw": "fresh issuances of CPs",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "global_growth",
+      "family_label": "Global economic growth",
+      "members": [
+        {
+          "raw": "global growth",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "global_share",
+      "family_label": "Global share and market presence",
+      "members": [
+        {
+          "raw": "country enjoyed a market share",
+          "confidence": 0.8
+        },
+        {
+          "raw": "global share",
+          "confidence": 1.0
+        },
+        {
+          "raw": "share",
+          "confidence": 0.6
+        }
+      ]
+    },
+    {
+      "family_id": "weight_and_mass",
+      "family_label": "Weight, mass and physical units",
+      "members": [
+        {
+          "raw": "gram",
+          "confidence": 1.0
+        },
+        {
+          "raw": "weight",
+          "confidence": 1.0
+        },
+        {
+          "raw": "weightage",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "household_financial_saving",
+      "family_label": "Gross financial saving of households",
+      "members": [
+        {
+          "raw": "gross financial saving of households",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "imports",
+      "family_label": "Imports volume or value",
+      "members": [
+        {
+          "raw": "imports during the same period",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "inflows_general",
+      "family_label": "Inflows general",
+      "members": [
+        {
+          "raw": "inflows",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "investment_intentions",
+      "family_label": "Investment intentions and plans",
+      "members": [
+        {
+          "raw": "investment intentions",
+          "confidence": 1.0
+        },
+        {
+          "raw": "investment under PLI scheme",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "steady_growth_status",
+      "family_label": "Steady growth status indicators",
+      "members": [
+        {
+          "raw": "is steady growth",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "manufacturing",
+      "family_label": "Manufacturing firms and sector",
+      "members": [
+        {
+          "raw": "manufacturing firms",
+          "confidence": 1.0
+        },
+        {
+          "raw": "manufacturing sector",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "moderation",
+      "family_label": "Moderation metrics",
+      "members": [
+        {
+          "raw": "moderated to an average",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "stability",
+      "family_label": "Stability status indicators",
+      "members": [
+        {
+          "raw": "mostly stable",
+          "confidence": 0.8
+        },
+        {
+          "raw": "remained low",
+          "confidence": 0.8
+        },
+        {
+          "raw": "remained stable",
+          "confidence": 0.8
+        },
+        {
+          "raw": "remained steady",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "budget_estimates_status",
+      "family_label": "Budget estimate compliance indicators",
+      "members": [
+        {
+          "raw": "remain robust",
+          "confidence": 0.7
+        },
+        {
+          "raw": "remain strong",
+          "confidence": 0.7
+        },
+        {
+          "raw": "remain within the budget estimate",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "rights_issues",
+      "family_label": "Rights issues",
+      "members": [
+        {
+          "raw": "rights issues also",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "route",
+      "family_label": "Route",
+      "members": [
+        {
+          "raw": "route",
+          "confidence": 0.6
+        }
+      ]
+    },
+    {
+      "family_id": "sales",
+      "family_label": "Sales volumes and values",
+      "members": [
+        {
+          "raw": "sale (tonnes)",
+          "confidence": 0.9
+        },
+        {
+          "raw": "sales",
+          "confidence": 1.0
+        },
+        {
+          "raw": "sales at a subsidised rate",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "corporate_bonds_secondary",
+      "family_label": "Secondary market on corporate bonds",
+      "members": [
+        {
+          "raw": "secondary market on corporate bonds",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "securities_scbs",
+      "family_label": "Securities of SCBs",
+      "members": [
+        {
+          "raw": "securities25 of SCBs",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "services_exports",
+      "family_label": "Services exports",
+      "members": [
+        {
+          "raw": "services exports",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "wage_salaried_share",
+      "family_label": "Share of regular wage or salaried employees",
+      "members": [
+        {
+          "raw": "share of regular wage/salaried employees",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "gdp_share_stabilizing",
+      "family_label": "Share relative to GDP stabilizing",
+      "members": [
+        {
+          "raw": "share relative to GDP stabilizing",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "small_firms",
+      "family_label": "Smallest firms in India",
+      "members": [
+        {
+          "raw": "smallest firms in India",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "stood_metrics",
+      "family_label": "Stood metrics",
+      "members": [
+        {
+          "raw": "stood",
+          "confidence": 0.6
+        },
+        {
+          "raw": "stood (tonne)",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "family_id": "potential_rate_return",
+      "family_label": "Returning to potential rate",
+      "members": [
+        {
+          "raw": "returning to its potential rate",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "rice_stock",
+      "family_label": "Rice stock",
+      "members": [
+        {
+          "raw": "rice stock (tonne)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "retail_cbdc",
+      "family_label": "Retail CBDC in circulation",
+      "members": [
+        {
+          "raw": "retail CBDC in circulation",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "retirement_benefits",
+      "family_label": "Retirement benefits",
+      "members": [
+        {
+          "raw": "retirement benefits",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "revenue",
+      "family_label": "Revenue and non-tax revenue",
+      "members": [
+        {
+          "raw": "Revenue",
+          "confidence": 1.0
+        },
+        {
+          "raw": "non-tax revenue in ORR",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "scbs_status",
+      "family_label": "SCBs status indicators",
+      "members": [
+        {
+          "raw": "SCBs stands",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "family_id": "per_cent",
+      "family_label": "Per cent",
+      "members": [
+        {
+          "raw": "Per cent",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "per_month",
+      "family_label": "Per month",
+      "members": [
+        {
+          "raw": "per month",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "products_range_bound",
+      "family_label": "Products price range bound",
+      "members": [
+        {
+          "raw": "products was range bound",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "trade_surplus",
+      "family_label": "Trade surplus",
+      "members": [
+        {
+          "raw": "trade surplus",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "tune",
+      "family_label": "Tune",
+      "members": [
+        {
+          "raw": "tune",
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "family_id": "two_tranches",
+      "family_label": "Two tranches",
+      "members": [
+        {
+          "raw": "two tranches",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "labor_force_participation",
+      "family_label": "Labor force participation rate",
+      "members": [
+        {
+          "raw": "unchanged labor force participation rate",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "value",
+      "family_label": "Value",
+      "members": [
+        {
+          "raw": "value",
+          "confidence": 0.6
+        },
+        {
+          "raw": "valued",
+          "confidence": 0.6
+        }
+      ]
+    },
+    {
+      "family_id": "placement_metrics",
+      "family_label": "Placement metrics and tonnes",
+      "members": [
+        {
+          "raw": "was placed",
+          "confidence": 0.6
+        },
+        {
+          "raw": "was placed (tonne)",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "balance_tone",
+      "family_label": "Evenly balanced sentiment",
+      "members": [
+        {
+          "raw": "were also almost evenly balanced",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "norm_widening",
+      "family_label": "Widening towards norm",
+      "members": [
+        {
+          "raw": "widen to around its norm",
+          "confidence": 0.8
+        }
+      ]
+    }
+  ]
+}

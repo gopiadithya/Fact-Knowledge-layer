@@ -1,0 +1,31 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+.vite/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/venv/
+backend/.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment / OS
+.env
+.DS_Store
+Thumbs.db
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+
+# Knowledge layer snapshot
+backend/data/store.json
+backend/data/store.json.tmp
+
+# LLM response cache
+backend/.llm-cache/

@@ -1,0 +1,1156 @@
+{
+  "families": [
+    {
+      "family_id": "awareness_coverage_percentage",
+      "family_label": "Percentage of persons covered by awareness programmes",
+      "members": [
+        {
+          "raw": "%age of persons in respective category covered by the awareness programmes",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "balance_amount",
+      "family_label": "Balance amount",
+      "members": [
+        {
+          "raw": "Above balance",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "active_customers",
+      "family_label": "Active customers count",
+      "members": [
+        {
+          "raw": "Active customers",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "bid_amount",
+      "family_label": "Bid amount in excess",
+      "members": [
+        {
+          "raw": "Bid in excess",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "board_executive_status",
+      "family_label": "Board or executive status",
+      "members": [
+        {
+          "raw": "Board / executive status",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "borrowings_debt",
+      "family_label": "Borrowings and debt",
+      "members": [
+        {
+          "raw": "Borrowings / debt",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "cagr",
+      "family_label": "Compound Annual Growth Rate",
+      "members": [
+        {
+          "raw": "CAGR",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "corporate_identity_number",
+      "family_label": "Corporate Identity Number",
+      "members": [
+        {
+          "raw": "CORPORATE IDENTITY NUMBER",
+          "confidence": 1.0
+        },
+        {
+          "raw": "Corporate Identity Number (CIN)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "capital_expenditure",
+      "family_label": "Capital expenditure",
+      "members": [
+        {
+          "raw": "Capital expenditure",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "capital_work_in_progress",
+      "family_label": "Capital work in progress",
+      "members": [
+        {
+          "raw": "Capital work in progress",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "cash_and_equivalents",
+      "family_label": "Cash and cash equivalents",
+      "members": [
+        {
+          "raw": "Cash and equivalents",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "committee_board_range",
+      "family_label": "Committee or Board in the range",
+      "members": [
+        {
+          "raw": "Committee/ Board in the range",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "company_secretary_email",
+      "family_label": "Company Secretary and E-mail",
+      "members": [
+        {
+          "raw": "Company Secretary and E-mail",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "face_value",
+      "family_label": "Face value",
+      "members": [
+        {
+          "raw": "Company of face value",
+          "confidence": 0.8
+        },
+        {
+          "raw": "equity shares of face value",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "consolidated_financial_statements_goodwill",
+      "family_label": "Consolidated Financial Statements including goodwill",
+      "members": [
+        {
+          "raw": "Consolidated Financial Statements includes goodwill",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "dispatch_one",
+      "family_label": "DispatchOne",
+      "members": [
+        {
+          "raw": "DispatchOne",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "ebitda",
+      "family_label": "EBITDA",
+      "members": [
+        {
+          "raw": "EBITDA",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "ebitda_change",
+      "family_label": "EBITDA change",
+      "members": [
+        {
+          "raw": "EBITDA change",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "ebitda_margin",
+      "family_label": "EBITDA margin",
+      "members": [
+        {
+          "raw": "EBITDA margin",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "ebitda_margin_change",
+      "family_label": "EBITDA margin change",
+      "members": [
+        {
+          "raw": "EBITDA margin change",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "enclosure",
+      "family_label": "Enclosure",
+      "members": [
+        {
+          "raw": "Encl",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "equity_shares",
+      "family_label": "Equity Shares",
+      "members": [
+        {
+          "raw": "Equity Shares",
+          "confidence": 1.0
+        },
+        {
+          "raw": "equity shares",
+          "confidence": 1.0
+        },
+        {
+          "raw": "nine equity shares",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "express_parcel_shipments",
+      "family_label": "Express parcel shipments",
+      "members": [
+        {
+          "raw": "Express parcel shipments",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "freight_on_delivery_pickup",
+      "family_label": "Freight on delivery or pick",
+      "members": [
+        {
+          "raw": "Freight on delivery/Freight on pick",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "headcount",
+      "family_label": "Headcount",
+      "members": [
+        {
+          "raw": "Headcount",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "income_tax_demand",
+      "family_label": "Income tax demand",
+      "members": [
+        {
+          "raw": "Income tax demand",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "incorporation_date",
+      "family_label": "Incorporation date",
+      "members": [
+        {
+          "raw": "Incorporation date",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "consideration_india",
+      "family_label": "Consideration in India",
+      "members": [
+        {
+          "raw": "India for a consideration",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "statutory_income_tax_rate_india",
+      "family_label": "India statutory income tax rate",
+      "members": [
+        {
+          "raw": "India's statutory income tax rate",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "limited_consideration",
+      "family_label": "Limited for a consideration",
+      "members": [
+        {
+          "raw": "Limited for a consideration",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "locate_one",
+      "family_label": "LocateOne",
+      "members": [
+        {
+          "raw": "LocateOne",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "net_profit_loss",
+      "family_label": "Net profit or loss",
+      "members": [
+        {
+          "raw": "Net profit / loss",
+          "confidence": 1.0
+        },
+        {
+          "raw": "loss",
+          "confidence": 0.9
+        },
+        {
+          "raw": "loss account",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "net_profit_loss_change",
+      "family_label": "Net profit or loss change",
+      "members": [
+        {
+          "raw": "Net profit / loss change",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "net_working_capital_days",
+      "family_label": "Net working capital days",
+      "members": [
+        {
+          "raw": "Net working capital days",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "ptl_freight_tonnage",
+      "family_label": "PTL freight tonnage",
+      "members": [
+        {
+          "raw": "PTL freight tonnage",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "pin_codes_served",
+      "family_label": "Pin codes served",
+      "members": [
+        {
+          "raw": "Pin codes served",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "preference_shares",
+      "family_label": "Preference Shares",
+      "members": [
+        {
+          "raw": "Preference Shares",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "q4",
+      "family_label": "Q4",
+      "members": [
+        {
+          "raw": "Q4",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "registered_office",
+      "family_label": "Registered office",
+      "members": [
+        {
+          "raw": "Registered office",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "revenue",
+      "family_label": "Revenue",
+      "members": [
+        {
+          "raw": "Revenue",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "symbol",
+      "family_label": "Symbol",
+      "members": [
+        {
+          "raw": "Symbol",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "total_offer_size_eligibility",
+      "family_label": "Total Offer size Eligibility and share reservation",
+      "members": [
+        {
+          "raw": "Total Offer size Eligibility and share reservation among QIBs, NIIs and RIIs",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "total_income",
+      "family_label": "Total income",
+      "members": [
+        {
+          "raw": "Total income",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "transport_one",
+      "family_label": "TransportOne",
+      "members": [
+        {
+          "raw": "TransportOne",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "aggregate_compensation",
+      "family_label": "Aggregate compensation",
+      "members": [
+        {
+          "raw": "aggregate compensation",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "aggregate_floor_area",
+      "family_label": "Aggregate floor area (square feet)",
+      "members": [
+        {
+          "raw": "aggregate floor area (square feet)",
+          "confidence": 1.0
+        },
+        {
+          "raw": "built up area (square feet)",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "allotted_equity_shares_expiry_days",
+      "family_label": "Allotted equity shares after expiry days",
+      "members": [
+        {
+          "raw": "allotted equity shares after expiry (days)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "allowance_for_doubtful_debts",
+      "family_label": "Allowance for doubtful debts",
+      "members": [
+        {
+          "raw": "allowance for doubtful debts",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "amount",
+      "family_label": "Amount",
+      "members": [
+        {
+          "raw": "amount",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "family_id": "amount_of_the_provision",
+      "family_label": "Amount of the provision",
+      "members": [
+        {
+          "raw": "amount of the provision",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "headcount_increase",
+      "family_label": "Headcount increase",
+      "members": [
+        {
+          "raw": "an overall headcount increase",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "annual_contribution",
+      "family_label": "Annual contribution",
+      "members": [
+        {
+          "raw": "annual contribution",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "annual_household_income",
+      "family_label": "Annual household income",
+      "members": [
+        {
+          "raw": "annual household income",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "authorised_share_capital_dcbspl",
+      "family_label": "Authorised share capital of DCBSPL",
+      "members": [
+        {
+          "raw": "authorised share capital of DCBSPL",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "authorised_share_capital_dfspl",
+      "family_label": "Authorised share capital of DFSPL",
+      "members": [
+        {
+          "raw": "authorised share capital of DFSPL",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "authorised_share_capital_oscpl",
+      "family_label": "Authorised share capital of OSCPL",
+      "members": [
+        {
+          "raw": "authorised share capital of OSCPL",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "authorised_share_capital_sscpl",
+      "family_label": "Authorised share capital of SSCPL",
+      "members": [
+        {
+          "raw": "authorised share capital of SSCPL",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "authorised_share_capital_spoton",
+      "family_label": "Authorised share capital of Spoton",
+      "members": [
+        {
+          "raw": "authorised share capital of Spoton",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "before_various_forums",
+      "family_label": "Before various forums",
+      "members": [
+        {
+          "raw": "before various forums",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "bonus_shares",
+      "family_label": "Bonus shares",
+      "members": [
+        {
+          "raw": "bonus shares",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "types_of_customers_brief",
+      "family_label": "Brief on types of customers",
+      "members": [
+        {
+          "raw": "c. A brief on types of customers",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "capacity_network_infrastructure",
+      "family_label": "Capacity in network infrastructure",
+      "members": [
+        {
+          "raw": "capacity in our network infrastructure",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "combined_fleet_vehicles",
+      "family_label": "Combined fleet vehicles",
+      "members": [
+        {
+          "raw": "combined fleet (vehicles)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "consideration",
+      "family_label": "Consideration",
+      "members": [
+        {
+          "raw": "consideration",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "customers",
+      "family_label": "Customers count",
+      "members": [
+        {
+          "raw": "customers",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "default_contractual_payments_days",
+      "family_label": "Default when contractual payments days",
+      "members": [
+        {
+          "raw": "default when contractual payments (days)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "direct_spend",
+      "family_label": "Direct spend",
+      "members": [
+        {
+          "raw": "direct spend",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "direct_spends_logistics",
+      "family_label": "Direct spends on logistics",
+      "members": [
+        {
+          "raw": "direct spends on logistics",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "enhancing_employee",
+      "family_label": "Enhancing employee",
+      "members": [
+        {
+          "raw": "enhancing employee",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "equity_share_capital_dcbspl",
+      "family_label": "Equity share capital of DCBSPL",
+      "members": [
+        {
+          "raw": "equity share capital of DCBSPL",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "equity_share_capital_dfspl",
+      "family_label": "Equity share capital of DFSPL",
+      "members": [
+        {
+          "raw": "equity share capital of DFSPL",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "equity_share_capital_oscpl",
+      "family_label": "Equity share capital of OSCPL",
+      "members": [
+        {
+          "raw": "equity share capital of OSCPL",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "equity_share_capital_sscpl",
+      "family_label": "Equity share capital of SSCPL",
+      "members": [
+        {
+          "raw": "equity share capital of SSCPL",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "equity_share_capital_spoton",
+      "family_label": "Equity share capital of Spoton",
+      "members": [
+        {
+          "raw": "equity share capital of Spoton",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "financial_year_in_excess",
+      "family_label": "Financial year in excess",
+      "members": [
+        {
+          "raw": "financial year in excess",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "goodwill",
+      "family_label": "Goodwill",
+      "members": [
+        {
+          "raw": "goodwill",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "includes_payment_towards_security_deposit",
+      "family_label": "Includes payment towards security deposit",
+      "members": [
+        {
+          "raw": "includes payment towards security deposit",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "includes_unbilled_receivable",
+      "family_label": "Includes unbilled receivable",
+      "members": [
+        {
+          "raw": "includes unbilled receivable",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "increase",
+      "family_label": "Increase",
+      "members": [
+        {
+          "raw": "increase",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "family_id": "managerial_personnel",
+      "family_label": "Managerial personnel",
+      "members": [
+        {
+          "raw": "managerial personnel",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "market_share",
+      "family_label": "Market share",
+      "members": [
+        {
+          "raw": "market share",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "non_compete_fees",
+      "family_label": "Non-compete fees",
+      "members": [
+        {
+          "raw": "non-compete fees",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "non_executive_directors_sitting_fees",
+      "family_label": "Non-executive directors includes sitting fees",
+      "members": [
+        {
+          "raw": "non-executive directors includes sitting fees",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "one_time_deferred_bonus",
+      "family_label": "One-time deferred bonus",
+      "members": [
+        {
+          "raw": "one-time deferred bonus",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "ordinary_shares",
+      "family_label": "Ordinary shares",
+      "members": [
+        {
+          "raw": "ordinary shares",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "other_receivables",
+      "family_label": "Other receivables",
+      "members": [
+        {
+          "raw": "other receivables",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "payment",
+      "family_label": "Payment",
+      "members": [
+        {
+          "raw": "payment",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "raising_demands",
+      "family_label": "Raising demands",
+      "members": [
+        {
+          "raw": "raising demands",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "recognised_expense",
+      "family_label": "Recognised expense",
+      "members": [
+        {
+          "raw": "recognised expense",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "registered_growth_rate",
+      "family_label": "Registered a growth rate",
+      "members": [
+        {
+          "raw": "registered a Growth rate",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "release",
+      "family_label": "Release",
+      "members": [
+        {
+          "raw": "release",
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "family_id": "gdp_growth_rate",
+      "family_label": "GDP growth rate",
+      "members": [
+        {
+          "raw": "s GDP to grow",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "family_id": "per_capita_gdp",
+      "family_label": "Per capita GDP",
+      "members": [
+        {
+          "raw": "s per capita GDP",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "segments_having_market_share",
+      "family_label": "Segments having a market share",
+      "members": [
+        {
+          "raw": "segments having a market share",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "service_tax_demand",
+      "family_label": "Service tax demand",
+      "members": [
+        {
+          "raw": "service tax demand",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "share_capital_delhivery_robotics",
+      "family_label": "Share capital of Delhivery Robotics",
+      "members": [
+        {
+          "raw": "share capital of Delhivery Robotics",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "share_capital_delhivery_usa",
+      "family_label": "Share capital of Delhivery USA",
+      "members": [
+        {
+          "raw": "share capital of Delhivery USA",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "share_certificates_period_days",
+      "family_label": "Share certificates within a period days",
+      "members": [
+        {
+          "raw": "share certificates within a period (days)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "short_term_leases",
+      "family_label": "Short-term leases",
+      "members": [
+        {
+          "raw": "short-term leases",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "sitting_fee",
+      "family_label": "Sitting fee",
+      "members": [
+        {
+          "raw": "sitting fee",
+          "confidence": 1.0
+        },
+        {
+          "raw": "sitting fees",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "steady",
+      "family_label": "Steady",
+      "members": [
+        {
+          "raw": "steady",
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "family_id": "stood",
+      "family_label": "Stood",
+      "members": [
+        {
+          "raw": "stood",
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "family_id": "tireless_efforts",
+      "family_label": "Tireless efforts",
+      "members": [
+        {
+          "raw": "tireless efforts",
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "family_id": "tonnage_tonnes",
+      "family_label": "Tonnage in tonnes",
+      "members": [
+        {
+          "raw": "tonnage (tonnes)",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "tranches_achieving_share_prices",
+      "family_label": "Tranches upon achieving share prices",
+      "members": [
+        {
+          "raw": "tranches upon achieving share prices",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "trucks",
+      "family_label": "Trucks count",
+      "members": [
+        {
+          "raw": "trucks",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "un_utilised_ipo_expenses",
+      "family_label": "Un-utilised IPO expenses",
+      "members": [
+        {
+          "raw": "un-utilised IPO expenses",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "unbilled_receivables",
+      "family_label": "Unbilled receivables",
+      "members": [
+        {
+          "raw": "unbilled receivables",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "under_protest_amount",
+      "family_label": "Under protest for an amount",
+      "members": [
+        {
+          "raw": "under protest for an amount",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "value_through_profit_or_loss",
+      "family_label": "Value through profit or loss",
+      "members": [
+        {
+          "raw": "value through profit or loss",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "voluntary_spend",
+      "family_label": "Voluntary spend",
+      "members": [
+        {
+          "raw": "voluntary spend",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "family_id": "maximum_allowed_gap_days",
+      "family_label": "Within the maximum allowed gap days",
+      "members": [
+        {
+          "raw": "within the maximum allowed gap (days)",
+          "confidence": 1.0
+        }
+      ]
+    }
+  ]
+}
