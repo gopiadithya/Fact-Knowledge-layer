@@ -488,7 +488,8 @@ def detect_scope(sentence_lower: str) -> str:
         return "standalone"
     if "consolidated" in sentence_lower or "group" in sentence_lower:
         return "consolidated"
-    if "segment" in sentence_lower or "business line" in sentence_lower:
+    if ("segment" in sentence_lower or "business line" in sentence_lower or "service line" in sentence_lower
+            or re.search(r"\brevenues?\s+from\s+(?!operations\b|services\b|contracts\b)[a-z0-9\- ]+\s+services\b", sentence_lower)):
         return "segment"
     return "unspecified"
 

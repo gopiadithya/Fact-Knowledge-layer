@@ -125,8 +125,9 @@ class DeterministicReasoningEngine:
         notes: List[str] = []
         sa, sb = a.context.scope, b.context.scope
         # standalone vs consolidated is a real difference; an explicitly standalone figure against an unstated one is
-        # treated as a scope difference too, because company-level prose defaults to consolidated numbers
-        scope_conflict = sa != sb and ("unspecified" not in (sa, sb) or "standalone" in (sa, sb))
+        # treated as a scope difference too, because company-level prose defaults to consolidated numbers.
+        # A segment figure is also not comparable to company-level or consolidated totals.
+        scope_conflict = sa != sb and ("unspecified" not in (sa, sb) or "standalone" in (sa, sb) or "segment" in (sa, sb))
         if scope_conflict:
             notes.append(f"scope {sa} vs {sb}")
         elif sa != sb:
