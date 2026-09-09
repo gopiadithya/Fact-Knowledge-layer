@@ -31,7 +31,7 @@
 
   --chart-mid: #949dab;
   --chart-low: #ced3db;
-  --highlight: #ffe98a;
+  --highlight: #c7d8ff;
 
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
@@ -48,7 +48,7 @@ p { margin: 0; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 input, select { font: inherit; color: inherit; }
-::selection { background: var(--highlight); color: var(--ink); }
+::selection { background: #c7d8ff; color: #0f172a; }
 .note { color: var(--muted); font-size: 13.5px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
@@ -211,7 +211,7 @@ input, select { font: inherit; color: inherit; }
 .drawer header .close:hover { color: #fff; }
 .drawer .body { overflow: auto; padding: 16px 22px 40px; }
 .pagetext { font-family: var(--serif); white-space: pre-wrap; line-height: 1.68; font-size: 15.5px; color: var(--ink-2); }
-.pagetext mark { background: var(--highlight); color: var(--ink); padding: 1px 0; box-decoration-break: clone; }
+.pagetext mark { background: #dbeafe; color: #1e3a8a; font-weight: 500; padding: 1px 4px; border-radius: 4px; box-decoration-break: clone; }
 .pagenav { display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 13px; margin-bottom: 12px; flex-wrap: wrap; }
 
 /* ------------------------------------------------------------------ overview */
