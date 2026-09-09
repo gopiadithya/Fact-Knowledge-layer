@@ -180,12 +180,6 @@ Failure modes that remain, contained rather than solved:
 | Bucketed matching and in-memory state with a JSON snapshot | Enough for hundreds of pages and many documents; incremental upload does not rebuild. | Not multi-user; a database would replace `store.json`. |
 | Layout-aware parsing | Two-column reports and KPI slides are the norm, not the exception. | Reading order is a heuristic; unusual layouts can still merge or split sentences — see the running-header failure above. |
 
-### AI tools used
-
-The first version of this repository was generated with Google Gemini. A fact check against the assignment PDF and the sample documents showed its four cases were invented (quotes and figures that do not exist in the PDFs) and its extractor mostly returned years and footnote numbers as values. The backend extraction, normalisation and reasoning, the frontend, the tests and this README were then rewritten with Claude Code (Claude Fable 5.1), with every case checked against the actual PDF text.
-
-Gemini is also used at runtime for the one optional step described under [The LLM step](#the-llm-step) — grouping metric labels into families. It is off by default, off whenever no key is present, and no verdict depends on it.
-
 ## Limitations and next steps
 
 What does not work yet:
