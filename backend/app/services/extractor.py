@@ -60,9 +60,9 @@ _GOV_PROFILE = re.compile(
     rf"^{_NAME}\s+is\s+(?:the\s+|a\s+|an\s+)?(?P<role>[A-Z][A-Za-z\-, ]{{3,80}}?Director[A-Za-z\-, ]{{0,40}}?)\s+of\s+(?:our|the)\s+Company")
 _ORG_WORD = re.compile(r"\b(bank|fund|ministry|department|government|institute|university|corporation|corp|council|"
                        r"authority|commission|agency|group|association|foundation|society|board|office|"
-                       r"limited|ltd|inc|llc|llp|plc|company|co)\b", re.I)
+                       r"limited|ltd|inc|llc|llp|plc|ag|se|company|co)\b", re.I)
 _RUNNING_HEADER = re.compile(r"(?:[A-Z][A-Z&/'\-]{3,}\s+){2,6}[a-z]")
-_PROPER_PHRASE = re.compile(r"\b(?:[A-Z][a-z]{2,}\s+){1,3}[A-Z][a-z]{2,}\b")
+_PROPER_PHRASE = re.compile(r"\b(?:(?:[A-Z]{2,5}|[A-Z][a-z]{1,})\s+){1,3}(?:[A-Z]{2,5}|[A-Z][a-z]{2,})\b")
 _HEADING_WORD = re.compile(r"\b(chapter|page|table|chart|box|figure|annex|appendix|contents|source|note|"
                            r"introduction|section|part|preface|abbreviations)\b", re.I)
 _CONTENTS_LINE = re.compile(r"\b(?:page|chapter|table|figure|annex)\s*(?:no\.?|number)\b|\.{3,}|^contents\b", re.I)
@@ -119,12 +119,12 @@ class FactExtractor:
         named_up_front = bool(top_name) and top_name.lower() in head_l
         if institution and (not named_up_front or top_n < 3 or full_l.count(institution.lower()) >= top_n):
             md.primary_entity = institution
-        elif top_name:
+        elif top_name and (named_up_front or top_n >= 20):
             md.primary_entity = top_name
         else:
             clean = re.sub(r"^[0-9]+-|\.pdf$", "", md.original_name, flags=re.I).replace("-", " ").replace("_", " ").title()
-            md.primary_entity = (cls._entity_from_pdf_metadata(md)
-                                 or cls._repeated_organisation(document)
+            md.primary_entity = (cls._repeated_organisation(document)
+                                 or cls._entity_from_pdf_metadata(md)
                                  or cls._title_line(document)
                                  or (clean if len(clean) > 3 else "Unknown entity"))
 
@@ -150,10 +150,14 @@ class FactExtractor:
         # 3b. document period: the fiscal period the document reports on (used when a KPI tile has no period label)
         md.document_period = None
         ar = re.search(r"annual report\s+(20\d\d)\s?[-–]\s?(\d{2,4})", head_l)
+        ar_single = re.search(r"(?:annual report\s+(20\d\d)|(20\d\d)\s+annual report)", head_l)
         fy_end = re.search(r"(?:financial\s+)?year\s+ended\s+" + _DATE, head, re.I)
         if ar:
             y2 = ar.group(2)
             md.document_period = f"FY{int(y2) if len(y2) == 4 else int(ar.group(1)[:2] + y2)}"
+        elif ar_single:
+            y = int(ar_single.group(1) or ar_single.group(2))
+            md.document_period = f"FY{y}"
         elif fy_end and _iso(fy_end.group("date")):
             md.document_period = f"FY{int(_iso(fy_end.group('date'))[:4])}"
         else:
@@ -180,6 +184,9 @@ class FactExtractor:
     def _entity_from_pdf_metadata(md) -> Optional[str]:
         """The PDF's own author field, when it names an organisation rather than a person."""
         author = (md.pdf_author or "").strip()
+        m_paren = re.search(r"\(([^,)]+)(?:,[^)]*)?\)", author)
+        if m_paren and _ORG_WORD.search(m_paren.group(1)):
+            author = m_paren.group(1).strip()
         if not (2 <= len(author) <= 60):
             return None
         if len(author.split()) == 1 or _ORG_WORD.search(author):
