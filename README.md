@@ -64,17 +64,6 @@ LLM_MODE=hybrid      # `off` disables the step; anything without a key falls bac
 
 Same facts, same verdicts on all four required cases; the LLM only widens which pairs are worth comparing. Every number below was reproduced in both modes.
 
-## Video demo
-
-Demo video (3 minutes or less): **[link to be added before submission]**
-
-Walk-through used in the video, all from the UI at http://localhost:5173:
-
-1. Drop the three `starter-datasets/delhivery` PDFs on the empty panel, then the three `india-macroeconomy` ones, then the two `synthetic-conflict` ones. Each is parsed and compared against everything already loaded.
-2. **Overview** — the document strip, the ranked review queue, and the "Start here" card: the one contradiction in the layer, with both quotes and the five-step trace side by side.
-3. Click **Open page** on a quote to see it highlighted in the source page.
-4. **Examples** — the four tabs are the four required cases: *Two sources agree*, *Sources disagree*, *Difference has a reason*, *Extraction was unsure*.
-
 ## Approach
 
 ### What a fact is
