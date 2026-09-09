@@ -21,7 +21,7 @@ from ..models.relationship import FactRelationship, ReasoningCheck, ReasoningTra
 TOLERANCE_PCT = 1.0        # relative tolerance for money/count values (rounding Cr vs Mn)
 PCT_POINT_TOLERANCE = 0.05  # absolute tolerance for percentage metrics (6.4 vs 6.5 is a real difference)
 IDENTIFIER_MIN_LENGTH = 6      # shorter tokens ("Q4", "V2") are codes/abbreviations, not identifiers
-IDENTIFIER_REVISION_SIMILARITY = 0.75  # character-ratio floor for "this is the same identifier, revised"
+IDENTIFIER_REVISION_SIMILARITY = 0.88  # character-ratio floor for "this is the same identifier, revised"
 _SCALE = {"crore": 1e7, "crores": 1e7, "cr": 1e7, "lakh": 1e5, "lakhs": 1e5, "million": 1e6, "millions": 1e6, "mn": 1e6,
           "m": 1e6, "billion": 1e9, "billions": 1e9, "bn": 1e9, "b": 1e9, "trillion": 1e12, "tn": 1e12, "k": 1e3, "thousand": 1e3}
 
@@ -126,8 +126,8 @@ class DeterministicReasoningEngine:
         sa, sb = a.context.scope, b.context.scope
         # standalone vs consolidated is a real difference; an explicitly standalone figure against an unstated one is
         # treated as a scope difference too, because company-level prose defaults to consolidated numbers.
-        # A segment figure is also not comparable to company-level or consolidated totals.
-        scope_conflict = sa != sb and ("unspecified" not in (sa, sb) or "standalone" in (sa, sb) or "segment" in (sa, sb))
+        # A segment figure or industry-wide statistic is also not comparable to company-level totals.
+        scope_conflict = sa != sb and ("unspecified" not in (sa, sb) or "standalone" in (sa, sb) or "segment" in (sa, sb) or "industry" in (sa, sb))
         if scope_conflict:
             notes.append(f"scope {sa} vs {sb}")
         elif sa != sb:
@@ -292,7 +292,7 @@ class DeterministicReasoningEngine:
                            f"{f' ({db})' if db and db != 'unknown' else ''}; they differ in {diff_chars} character"
                            f"{'s' if diff_chars != 1 else ''} out of {diff_total}, so this looks like a revision of "
                            f"one identifier rather than two conflicting claims.")
-            elif sim >= 0.3:
+            elif not identifier_pair and sim >= 0.3:
                 rel, why, conf = RelationshipType.INSUFFICIENT_EVIDENCE, "PARTIAL_TEXT_MATCH", 0.5
                 summary = (f"{a.metric} for {a.entity} partly overlaps between documents ('{a.raw_value}' vs '{b.raw_value}'); "
                            f"could be the same thing written differently or a real change. Needs review.")

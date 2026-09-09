@@ -242,6 +242,7 @@ class FactExtractor:
             facts.extend(cls._extract_attributes(document, page))
             facts.extend(cls._extract_tiles(document, page))
             facts.extend(cls._extract_governance(document, page))
+            facts.extend(cls._extract_tables(document, page))
         return cls._dedupe(facts)
 
     # ------------------------------------------------------------------ helpers
@@ -458,6 +459,25 @@ class FactExtractor:
             if not mentions:
                 continue
             periods = find_periods(text)
+            if not periods and document.metadata.document_period and document.metadata.document_period.startswith("FY"):
+                m_fy = re.match(r"FY(\d{4})", document.metadata.document_period)
+                if m_fy:
+                    cur_y = int(m_fy.group(1))
+                    prev_y = cur_y - 1
+                    m_rev = re.search(r"\b(year under review|review year|in the year)\b", lower)
+                    m_prev = re.search(r"\b(previous year|prior year|prior-year|prioryear)\b", lower)
+                    if m_rev:
+                        p_cur = FactPeriod(raw=m_rev.group(0), period_type=PeriodType.FISCAL_YEAR, canonical=f"FY{cur_y}",
+                                           start_date=f"{cur_y - 1}-04-01", end_date=f"{cur_y}-03-31")
+                        periods.append((m_rev.start(), m_rev.end(), p_cur))
+                    elif m_prev or "fiscal year" in lower:
+                        p_cur = FactPeriod(raw=f"FY{cur_y}", period_type=PeriodType.FISCAL_YEAR, canonical=f"FY{cur_y}",
+                                           start_date=f"{cur_y - 1}-04-01", end_date=f"{cur_y}-03-31")
+                        periods.append((0, 0, p_cur))
+                    if m_prev:
+                        p_prev = FactPeriod(raw=m_prev.group(0), period_type=PeriodType.FISCAL_YEAR, canonical=f"FY{prev_y}",
+                                            start_date=f"{prev_y - 1}-04-01", end_date=f"{prev_y}-03-31")
+                        periods.append((m_prev.start(), m_prev.end(), p_prev))
             values = parse_values(text, [(a, b) for a, b, _ in periods])
             if not values or len(values) >= 7 or "...." in text:      # table rows and table-of-contents lines
                 continue
@@ -838,6 +858,54 @@ class FactExtractor:
                 role = re.sub(r"\s+", " ", m.group("role")).strip()
                 add(m.group("name"), "active", md.document_date, sent.text, sent.start, sent.end,
                     0.8 if md.document_date else 0.5, role=role)
+        return facts
+
+    # ------------------------------------------------------------------ 5. tables
+    _TABLE_HDR = re.compile(r"in\s+(?P<cur>€|Rs\.?|₹|\$)\s?(?P<scale>m|mn|million|cr|crore|bn|billion)\b", re.I)
+
+    @classmethod
+    def _extract_tables(cls, document: Document, page: DocumentPage) -> List[Fact]:
+        facts: List[Fact] = []
+        lines = [l.strip() for l in page.text.split("\n") if l.strip()]
+        col_periods = []
+        unit_cur = ""
+        scale_factor = 1.0
+        scale_label = ""
+        for line in lines:
+            m_hdr = cls._TABLE_HDR.search(line)
+            if m_hdr:
+                cur = m_hdr.group("cur")
+                unit_cur = "EUR" if cur == "€" else ("INR" if cur in ("Rs", "Rs.", "₹") else "USD")
+                sc = m_hdr.group("scale").lower()
+                scale_factor = 1e9 if "b" in sc else (1e7 if "cr" in sc else 1e6)
+                scale_label = "billion" if "b" in sc else ("crore" if "cr" in sc else "million")
+                pers = find_periods(line)
+                col_periods = [p for _, _, p in pers]
+                continue
+            if col_periods:
+                if re.match(r"(?i)^(results|targets|comments|notes)\b", line) or len(line) > 120:
+                    col_periods = []
+                    continue
+                mentions = find_metric_mentions(line.lower())
+                if mentions:
+                    spec, kw = mentions[0][2], mentions[0][3]
+                    after_kw = line[mentions[0][1]:].strip()
+                    nums = re.findall(r"[\+\-]?\d{1,3}(?:,\d{3})*(?:\.\d+)?", after_kw)
+                    nums = [n for n in nums if not (n.endswith("%") or ("%" in line and line.find(n) > line.rfind("%")))]
+                    for i, n in enumerate(nums[:len(col_periods)]):
+                        try:
+                            val = float(n.replace(",", ""))
+                        except ValueError:
+                            continue
+                        p = col_periods[i]
+                        raw_str = f"{'€' if unit_cur == 'EUR' else ('₹' if unit_cur == 'INR' else '$')}{val:,.0f} {scale_label}".replace(",0", "")
+                        norm_val = round(val * scale_factor, 4)
+                        pv = ParsedValue(raw=raw_str, numeric=val, normalized=norm_val,
+                                         unit=f"{unit_cur} {scale_label.capitalize()}", normalized_unit=unit_cur,
+                                         kind="money", start=0, end=len(line))
+                        f = cls._make_fact(document, page, spec, spec.label, pv, p, line, 0, len(line),
+                                           0.90, line.lower(), "rule_table")
+                        facts.append(f)
         return facts
 
     # ------------------------------------------------------------------ dedupe
