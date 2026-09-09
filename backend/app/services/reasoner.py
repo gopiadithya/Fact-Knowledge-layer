@@ -112,14 +112,23 @@ class DeterministicReasoningEngine:
         if a.numeric_value is not None and b.numeric_value is not None and a.normalized_unit != b.normalized_unit:
             return None
 
+        ta, tb = a.raw_value.lower().strip(), b.raw_value.lower().strip()
+        identifier_pair = is_identifier_shaped(ta) and is_identifier_shaped(tb)
+
         # 3. period ------------------------------------------------------------------
         pa, pb = a.period.canonical, b.period.canonical
-        period_known = pa != "unknown" and pb != "unknown"
-        period_ok = period_known and pa == pb
-        checks.append(ReasoningCheck(step_number=3, name="Period", passed=period_ok,
-                                     explanation=(f"Same reporting period ({pa})" if period_ok
-                                                  else f"'{a.period.raw or pa}' vs '{b.period.raw or pb}'"),
-                                     details={"a": pa, "b": pb}))
+        if identifier_pair:
+            period_ok = True
+            checks.append(ReasoningCheck(step_number=3, name="Period", passed=True,
+                                         explanation="Permanent corporate identifier (reporting period not applicable)",
+                                         details={"type": "corporate_identity"}))
+        else:
+            period_known = pa != "unknown" and pb != "unknown"
+            period_ok = period_known and pa == pb
+            checks.append(ReasoningCheck(step_number=3, name="Period", passed=period_ok,
+                                         explanation=(f"Same reporting period ({pa})" if period_ok
+                                                      else f"'{a.period.raw or pa}' vs '{b.period.raw or pb}'"),
+                                         details={"a": pa, "b": pb}))
 
         # 4. context -----------------------------------------------------------------
         notes: List[str] = []
@@ -135,6 +144,18 @@ class DeterministicReasoningEngine:
         basis_conflict = a.context.accounting_standard != b.context.accounting_standard
         if basis_conflict:
             notes.append(f"basis '{a.context.accounting_standard}' vs '{b.context.accounting_standard}'")
+
+        # Sub-metric comparison: total vs other_revenue, segment vs total, etc.
+        sub_a, sub_b = getattr(a, "sub_metric", None), getattr(b, "sub_metric", None)
+        sub_metric_conflict = bool(
+            sub_a and sub_b and sub_a != sub_b
+            and not ("unspecified" in (sub_a, sub_b))
+            and not (sub_a == "total" and sub_b == "operations")
+            and not (sub_a == "operations" and sub_b == "total")
+        )
+        if sub_metric_conflict:
+            notes.append(f"sub-metric '{sub_a}' vs '{sub_b}'")
+
         qa, qb = set(a.context.qualifiers), set(b.context.qualifiers)
         estimate_diff = ("estimate" in qa) != ("estimate" in qb)
         partial_diff = ("partial_period" in qa) != ("partial_period" in qb)
@@ -151,7 +172,7 @@ class DeterministicReasoningEngine:
             notes.append("one figure is a share of a larger whole, the other is the whole")
         if exclusion_diff:
             notes.append("one figure states an exclusion the other does not")
-        context_ok = not (scope_conflict or basis_conflict or estimate_diff or partial_diff
+        context_ok = not (scope_conflict or sub_metric_conflict or basis_conflict or estimate_diff or partial_diff
                           or share_diff or exclusion_diff)
         checks.append(ReasoningCheck(step_number=4, name="Context", passed=context_ok,
                                      explanation="Same scope, basis and qualifiers" if context_ok else "; ".join(notes),
@@ -190,10 +211,13 @@ class DeterministicReasoningEngine:
                 rel, why, conf = RelationshipType.CONTEXTUALLY_EXPLAINED, "DIFFERENT_PERIODS", 0.9
                 summary = (f"Not a contradiction: {a.raw_value} and {b.raw_value} are {a.metric} for different periods "
                            f"({a.period.raw or pa} vs {b.period.raw or pb}).")
-            elif basis_conflict or scope_conflict:
-                rel, why, conf = RelationshipType.CONTEXTUALLY_EXPLAINED, "SCOPE_OR_BASIS", 0.88
+            elif basis_conflict or scope_conflict or sub_metric_conflict:
+                rel, why, conf = RelationshipType.CONTEXTUALLY_EXPLAINED, (
+                    "SUB_METRIC_DIFFERENCE" if sub_metric_conflict and not (basis_conflict or scope_conflict)
+                    else "SCOPE_OR_BASIS"
+                ), 0.88
                 summary = (f"Not a contradiction: {a.raw_value} vs {b.raw_value} for {a.metric} in {pa} differ because of "
-                           f"{'; '.join(n for n in notes if n.startswith(('scope', 'basis')))}.")
+                           f"{'; '.join(n for n in notes if n.startswith(('scope', 'basis', 'sub-metric')))}.")
             elif estimate_diff:
                 rel, why, conf = RelationshipType.CONTEXTUALLY_EXPLAINED, "DATA_VINTAGE", 0.85
                 est, act = (a, b) if "estimate" in qa else (b, a)
@@ -305,7 +329,11 @@ class DeterministicReasoningEngine:
                            f"this needs review, not a conflict call.")
             else:
                 rel, why, conf = RelationshipType.CONTRADICTION, "ATTRIBUTE_CONFLICT", 0.7
-                summary = f"{a.metric} for {a.entity} differs between documents: '{a.raw_value}' vs '{b.raw_value}'."
+                if identifier_pair:
+                    summary = (f"Contradiction: both sources identify {a.entity}, but report different {a.metric}s "
+                               f"('{a.raw_value}' in {a.document_name} vs '{b.raw_value}' in {b.document_name}).")
+                else:
+                    summary = f"{a.metric} for {a.entity} differs between documents: '{a.raw_value}' vs '{b.raw_value}'."
             return FactRelationship(
                 fact_a_id=a.id, fact_b_id=b.id, relationship_type=rel, confidence=round(conf * min(a.confidence, b.confidence) / 0.9, 2),
                 reasoning_trace=ReasoningTrace(checks=checks, summary=summary, primary_divergence_factor=why, confidence=conf),

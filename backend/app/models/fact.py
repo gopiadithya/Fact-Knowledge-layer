@@ -57,6 +57,7 @@ class Fact(BaseModel):
     metric: str                            # e.g. "Revenue from Operations"
     metric_canonical: str                  # normalized e.g. "financial.revenue"
     metric_category: MetricCategory = MetricCategory.FINANCIAL_FLOW
+    sub_metric: Optional[str] = None       # e.g. "total", "other_revenue", "segment_ecommerce", "operations", "net_capex"
     # Retrieval-only grouping. A family says two claims are worth comparing;
     # it never says they are the same fact. See metric_canonical for that.
     predicate_family: Optional[str] = None

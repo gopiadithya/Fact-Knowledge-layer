@@ -32,7 +32,7 @@ from ..models.document import Document, DocumentPage
 from ..models.fact import Fact, FactContext, FactPeriod, MetricCategory, PeriodType, SourceEvidence
 from .normalizer import (
     METRIC_BY_CANONICAL, MONTH_RE, MetricSpec, ParsedValue, detect_qualifiers, detect_scope,
-    find_metric_mentions, find_periods, normalize_entity, normalize_metric, parse_values, prenormalize,
+    detect_sub_metric, find_metric_mentions, find_periods, normalize_entity, normalize_metric, parse_values, prenormalize,
 )
 
 MATCH_THRESHOLD = 0.6   # facts below this are surfaced as low-confidence and excluded from matching
@@ -278,7 +278,7 @@ class FactExtractor:
     _CUE_TO = re.compile(r"\bto\s*$")
     _CUE_FROM = re.compile(r"\b(?:from|against|versus|vs\.?)\s*$")
     _CHANGE_VERB = re.compile(r"\b(increas|decreas|grew|grow|rose|risen|fell|fall|declin|reduc|improv|expand|"
-                              r"contract|up|down|higher|lower|widen|narrow)")
+                              r"contract|up|down|higher|lower|widen|narrow|short)")
 
     _CUE_COMPARISON = re.compile(r"\b(?:to|from|against|versus|vs\.?|by)\s*$")
     # a partitive phrase in front of the metric means the figure is a slice of a larger whole
@@ -380,7 +380,7 @@ class FactExtractor:
                 continue
             is_delta = not is_rate_metric and (cls._CUE_DELTA_OF.search(before)
                                                or (cls._CUE_DELTA_BY.search(before)
-                                                   and cls._CHANGE_VERB.search(lower[max(0, v.start - 60): v.start])))
+                                                   and cls._CHANGE_VERB.search(lower[max(0, v.start - 80): v.start])))
             if is_delta:
                 # a change belongs to the period it lands in: the stated subject period, or failing
                 # that the year after the one it moved "from"
@@ -432,10 +432,15 @@ class FactExtractor:
                 qualifiers.append(q)
         if non_gaap:
             qualifiers.append("adjusted_non_gaap")
+        if re.search(r"\b(of this|of these|of which|attributable to|thereof|includes?|including)\b", sentence_lower):
+            if "share_of" not in qualifiers:
+                qualifiers.append("share_of")
+        sub_metric = detect_sub_metric(sentence_lower, canonical, mention_text, page.text[:100])
         return Fact(
             document_id=md.id, document_name=md.original_name,
             entity=entity, entity_canonical=entity_c,
             metric=metric_label, metric_canonical=canonical, metric_category=category,
+            sub_metric=sub_metric,
             raw_value=value.raw, numeric_value=numeric, normalized_numeric_value=normalized,
             unit=value.unit, normalized_unit=value.normalized_unit,
             period=period,
@@ -727,16 +732,15 @@ class FactExtractor:
                 return
             seen.add(key)
             canonical = "attr." + re.sub(r"[^\w]+", "_", label.lower()).strip("_")[:50]
+            is_id = any(k in canonical for k in ("cin", "isin", "registration", "pan", "lei"))
             facts.append(Fact(
                 document_id=md.id, document_name=md.original_name, entity=entity, entity_canonical=entity_c,
                 metric=label, metric_canonical=canonical, metric_category=MetricCategory.CORPORATE,
+                sub_metric="identifier" if is_id else "attribute",
                 raw_value=value, numeric_value=None, normalized_numeric_value=None, unit="", normalized_unit="TEXT",
-                # These are identity/attribute facts (identifiers, registered address, ...). The only
-                # date available here is the document's publication date from its metadata, not a
-                # period stated next to the value, so the period is NOT_APPLICABLE rather than
-                # POINT_IN_TIME - printing the document date as the fact's period would be misleading.
-                period=FactPeriod(raw=md.document_date or "", period_type=PeriodType.NOT_APPLICABLE,
-                                  canonical=md.document_date or "undated", source="document_metadata"),
+                period=FactPeriod(raw="", period_type=PeriodType.NOT_APPLICABLE,
+                                  canonical="not_applicable" if is_id else (md.document_date or "undated"),
+                                  source="document_metadata"),
                 context=FactContext(scope="corporate", accounting_standard="n/a"),
                 source_evidence=SourceEvidence(document_id=md.id, document_name=md.original_name, page_number=page.page_number,
                                                exact_quote=quote, context_window=quote, char_start=start, char_end=end),

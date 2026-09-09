@@ -170,6 +170,10 @@ All cases are grounded in real documents and validated via automated pytest regr
 - **Accounting Basis (GAAP vs Non-GAAP / Adjusted)**:
   - Delhivery FY24 EBITDA (**₹1,266 Mn**) vs Adjusted EBITDA (**₹758 Mn**).
   - **Verdict**: `CONTEXTUALLY_EXPLAINED` (`ACCOUNTING_BASIS`).
+- **Sub-Metric & Segment Level Difference (Total vs Other / Segment Revenue)**:
+  - *DHL Group 2024 Annual Report*: Total Revenue (**€81,758M**) vs Other Revenue (**€795M**) vs eCommerce Division Revenue (**€2,153M**).
+  - *DHL Q4 Presentation*: Group EBIT (**€5,886M**) vs Freight Division EBIT (**€1,074M**).
+  - **Verdict**: `CONTEXTUALLY_EXPLAINED` (`SUB_METRIC_DIFFERENCE` / `SCOPE_OR_BASIS`). Prevents divisional and component revenues from falsely contradicting consolidated group figures.
 - **Corporate Identifier Revision (IPO Listing Transition)**:
   - Delhivery Prospectus 2022 CIN: `U63090DL2011PLC221234`
   - Delhivery Annual Report 2024 CIN: `L63090DL2011PLC221234`
@@ -196,7 +200,7 @@ The system has been evaluated across 5 distinct document corpora:
 | **Delhivery** | 3 PDFs | Prospectus, Annual Report FY24, Q4 Earnings Deck | 0 contradictions; multiple cross-document corroborations across Cr/Mn. |
 | **India Macro** | 3 PDFs | Economic Survey, RBI Report, IMF Article IV | Real contradiction captured (4.2% vs 2.8% inflation forecast); GDP corroboration. |
 | **Blue Dart** | 3 PDFs | Annual Reports (FY23, FY24, FY25) | Resolves 4B industry parcel volume vs company shipments via `SCOPE_OR_BASIS`. |
-| **DHL Group** | 2 PDFs | Q4 2024 Presentation + 2024 Annual Report | 174 cross-document pairs, 8 corroborations (€84,186m Revenue, €5,886m EBIT, FCF). |
+| **DHL Group** | 2 PDFs | Q4 2024 Presentation + 2024 Annual Report | 337 facts, 202 cross-document pairs, 8 corroborations (€84,186m Revenue, €5,886m EBIT, FCF), 0 false conflicts (reconciles segment/other revenue). |
 | **Synthetic** | 2 PDFs | Controlled test filings | Verified isolated revenue contradiction alongside corroborated EBITDA. |
 
 ---

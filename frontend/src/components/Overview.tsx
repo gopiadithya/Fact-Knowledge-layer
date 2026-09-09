@@ -176,14 +176,23 @@ export const Overview: React.FC<Props> = ({ documents, busy, onUpload, onDeleteD
                         <td key={e.id} className={`${total ? 'has' : ''} ${self ? 'self' : ''}`}>
                           <button
                             type="button"
-                            disabled={!total}
+                            disabled={!total || self}
                             onClick={() => onPickPair(d.id, e.id)}
                             style={{ background: total && !self ? `rgba(58, 70, 64, ${shade.toFixed(3)})` : undefined }}
-                            title={c ? `${total} comparisons: ${c.corroborated} agree, ${c.contradiction} conflict, ${c.explained} explained, ${c.review} to review` : 'No comparisons'}
+                            title={self ? 'Document against itself' : c ? `${total} comparisons: ${c.corroborated} agree, ${c.contradiction} conflict, ${c.explained} explained, ${c.review} to review` : 'No comparisons'}
                           >
-                            <span className="mx-total">{total || '—'}</span>
-                            {!!c?.contradiction && <span className="mx-bad">{c.contradiction} conflict{c.contradiction > 1 ? 's' : ''}</span>}
-                            {!c?.contradiction && !!c?.corroborated && <span className="mx-ok">{c.corroborated} agree</span>}
+                            {self ? (
+                              <span className="mx-total">—</span>
+                            ) : (
+                              <>
+                                <span className="mx-total">{total || '—'}</span>
+                                <div className="mx-badges">
+                                  {!!c?.corroborated && <span className="mx-ok" title={`${c.corroborated} agree`}>✓ {c.corroborated}</span>}
+                                  {!!c?.explained && <span className="mx-exp" title={`${c.explained} context`}>↔ {c.explained}</span>}
+                                  {!!c?.contradiction && <span className="mx-bad" title={`${c.contradiction} conflicts`}>✗ {c.contradiction}</span>}
+                                </div>
+                              </>
+                            )}
                           </button>
                         </td>
                       );

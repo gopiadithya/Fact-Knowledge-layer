@@ -32,7 +32,7 @@ CURRENCY_TOKENS = {
 }
 
 NUMBER = r"\(?-?\d{1,3}(?:,\d{2,3})+(?:\.\d+)?\)?|\(?-?\d+(?:\.\d+)?\)?"
-SCALE_WORDS = r"(?:crores?|cr|lakhs?|lacs?|millions?|mn|mm|billions?|bn|trillions?|tn|thousands?|k)"
+SCALE_WORDS = r"(?:crores?|cr|lakhs?|lacs?|millions?|mn|mm|m\b|billions?|bn|b\b|trillions?|tn|thousands?|k)"
 PCT_WORDS = r"(?:%|per\s?cent|percent|percentage\s+points?|pp|bps)"
 COUNT_WORDS = r"(?:tonnes?|tons?|employees|people|persons|parcels|shipments|orders|pin[\s-]?codes|customers|days|units|vehicles|tractors|sq\.?\s?ft\.?|square\s+feet|sqft|kilomet(?:re|er)s?|km|cities|states|countries|facilities|centres|centers|hubs|stores|branches)"
 
@@ -496,10 +496,43 @@ def detect_scope(sentence_lower: str) -> str:
     if (re.search(r"\b(industry|overall|market|sector|nationwide|across india|in india|country[- ]wide)\b", sentence_lower)
             or re.search(r"\b(?:india|country)\s+(?:shipped|produced|consumed|generated|delivered|handled|reached)\b", sentence_lower)):
         return "industry"
-    if ("segment" in sentence_lower or "business line" in sentence_lower or "service line" in sentence_lower
+    if (re.search(r"\b(segment|division|business unit|service line|business line|subsidiary|business)\b", sentence_lower)
+            or "other revenue" in sentence_lower or "other income" in sentence_lower
             or re.search(r"\brevenues?\s+from\s+(?!operations\b|services\b|contracts\b)[a-z0-9\- ]+\s+services\b", sentence_lower)):
         return "segment"
     return "unspecified"
+
+
+def detect_sub_metric(sentence_lower: str, metric_canonical: str = "", matched_keyword: str = "", page_context: str = "") -> Optional[str]:
+    s = sentence_lower
+    if "other revenue" in s or "other income" in s or "other operating" in s:
+        return "other_revenue"
+    if "accrued revenue" in s or "trade receivables" in s:
+        return "accrued_revenue"
+    if "net capex" in s:
+        return "net_capex"
+    if "tangible fixed assets" in s or "tangible assets" in s:
+        return "tangible_assets"
+    if ("capex" in metric_canonical or "guidance" in s) and re.search(r"\b(planned|target|range between)\b", s):
+        return "planned_target"
+    if re.search(r"\b(ecommerce|express|supply chain|global forwarding|freight|post & parcel|german letter mail|german parcel|international business unit)\s+(?:division|business unit|segment|business)\b", s):
+        m = re.search(r"\b(ecommerce|express|supply chain|global forwarding|freight|post & parcel|german letter mail|german parcel|international business unit)\b", s)
+        return f"segment_{m.group(1).replace(' ', '_').replace('&', 'and')}"
+    if page_context:
+        m_head = re.match(r"(?i)^\s*(ecommerce|express|supply chain|global forwarding|freight|post & parcel|german letter mail|german parcel|international business unit)\b", page_context.strip())
+        if m_head:
+            return f"segment_{m_head.group(1).lower().replace(' ', '_').replace('&', 'and')}"
+    if re.search(r"\b(?:division|business unit|service line|segment|subsidiary)\b", s):
+        return "segment"
+    if "underlying" in s or "adjusted" in s:
+        return "adjusted"
+    if "attributable to dpag" in s or "attributable to shareholders" in s:
+        return "parent_shareholders"
+    if "revenue from operations" in s or "revenues from operations" in s or "revenue from services" in s:
+        return "operations"
+    if re.search(r"\b(group|consolidated|total revenue|total ebit|headline)\b", s):
+        return "total"
+    return "total"
 
 
 class FactNormalizer:
